@@ -1,0 +1,19 @@
+<div class="hidden">
+  <img src="https://cdn.pixabay.com/photo/2015/03/26/10/02/people-690810_1280.jpg">
+</div> 
+<div class="card">
+  <div class="title">
+    <h2>Inicio de sesion</h2>
+  </div>
+  <form (submit)="onLoginSubmit()">
+    <div>
+      <label>Correo</label>
+      <input type="text" [(ngModel)]='email' name='email'>
+    </div>
+    <div>
+      <label>Contraseña</label>
+      <input type="password" [(ngModel)]='pwd' name='pwd'>
+    </div>
+    <input type="submit">
+  </form>
+</div>

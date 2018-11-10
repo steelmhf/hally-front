@@ -1,0 +1,64 @@
+.hidden{
+    overflow: hidden;
+}
+
+.card{
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 55%;;
+    margin: 0; padding: 0; border: 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 5;
+}
+
+.title{
+    margin: 0; border: 0;
+    margin-bottom: 2em;
+    padding: 0;
+    width: 100%;
+    background: rgba(119, 0, 255,1);
+    color: #FFF;
+}
+
+h2{
+    margin: 0; border: 0;
+    padding: 1em 0;
+    padding-left: 1em;
+    font-family: 'Montserrat';
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+img{
+    width: 100%;
+    max-height: 100%;
+    filter: blur(5px);
+    transform: scale(1.1);
+}
+
+label{
+    font-family: 'Montserrat';
+    margin: 1em;
+}
+
+input{
+    background: transparent;
+    padding:8px;
+    display:block;
+    border:none;
+    border-bottom:1px solid #ccc;
+    width:90%;
+    margin: 1em auto;
+}
+
+input[type="submit"]{
+    font-family: 'Montserrat';
+    width: 50% !important;
+}
+
+input[type="submit"]:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
