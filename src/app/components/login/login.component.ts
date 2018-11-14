@@ -21,6 +21,13 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit(){
     console.log(this._loginService.login(this.email, this.pwd));
+    const found = this._loginService.login(this.email, this.pwd);
+    if(found){
+      console.log("Found user");
+      //Aquí va el dashboard xD
+    }else{
+      console.log("Not found");
+    }
   }
 
 }
