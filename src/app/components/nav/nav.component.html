@@ -5,13 +5,13 @@
     <nav>
       <ul>
         <li class *ngIf="userService.isSessionOpen()">
-          <a [routerLink]="['/dashboard']">Dashboard</a>
+          <a [routerLink]="['/dashboard']">Tablón de Eventos</a>
         </li>
         <li class *ngIf="userService.isSessionOpen()">
-          <a [routerLink]="['/profile']">Profile</a>
+          <a [routerLink]="['/profile']">Perfil</a>
         </li>
         <li class *ngIf="userService.isSessionOpen()">
-          <a (click)="onLogOutClick()">Log out</a>
+          <a (click)="onLogOutClick()">Cerrar Sesión</a>
         </li>
       </ul>
     </nav>
