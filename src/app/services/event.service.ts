@@ -7,33 +7,35 @@ import { Event } from './../classes/event';
 export class EventService {
 
   constructor() { 
-    localStorage.setItem("events", JSON.stringify([
-      {
-        "id": "QA2DJF12S",
-        "name": "Halloween 31 de octubre",
-        "date": "2018-11-11T01:08:43.511Z",
-        "status": 1,
-        "paymentInfo": {
-          "somePaymentInfoField": "123"
-        },
-        "space": {
-          "name": "Hally space one",
-          "address": "Cra 43 #85-115"
-        },
-        "owner": {
-          "id": "1143166573",
-          "name": "James",
-          "contact": {
-            "email": "jfritz@hallycompany.co",
-            "phone": "573015648789",
-            "address": "Cra 49 #100-15"
-          }
-        },
-        "guestIds": [
-          "1145167984"
-        ]
-      }
-    ]));
+    if(!localStorage.getItem("events")){
+      localStorage.setItem("events", JSON.stringify([
+        {
+          "id": "QA2DJF12S",
+          "name": "Halloween 31 de octubre",
+          "date": "2018-11-11T01:08:43.511Z",
+          "status": 1,
+          "paymentInfo": {
+            "somePaymentInfoField": "123"
+          },
+          "space": {
+            "name": "Hally space one",
+            "address": "Cra 43 #85-115"
+          },
+          "owner": {
+            "id": "1143166573",
+            "name": "James",
+            "contact": {
+              "email": "jfritz@hallycompany.co",
+              "phone": "573015648789",
+              "address": "Cra 49 #100-15"
+            }
+          },
+          "guestIds": [
+            "1145167984"
+          ]
+        }
+      ]));
+    }
   }
 
   getAll(){
@@ -76,6 +78,7 @@ export class EventService {
   insertEvent(event){
     const events = JSON.parse(localStorage.getItem("events"));
     events.push(event);
+    localStorage.removeItem("events");
     localStorage.setItem("events", JSON.stringify(events));
   }
 }

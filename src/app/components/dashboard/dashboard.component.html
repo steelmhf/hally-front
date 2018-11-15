@@ -30,7 +30,7 @@
     <div class="formTitle">
       <h2>Crear Evento</h2>
     </div>
-    <form (submit)="createEvent()">
+    <form>
       <div>
         <label class="header">Nombre:</label>
         <input class="fit" type="text" [(ngModel)]='name' name='name'>
@@ -107,6 +107,7 @@
         <label class="header">Dirección:</label>
         <input class="fit" type="text" [(ngModel)]='addr' name='addr'>
       </div>
-      <input class="center" type="submit">
+      <input class="center" (click)="createEvent()" type="submit">
+      <!--button class="center" (click)="createEvent()"></button-->
     </form>
   </div>
