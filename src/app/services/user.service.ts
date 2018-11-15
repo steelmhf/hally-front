@@ -8,7 +8,7 @@ export class UserService {
   constructor() { }
 
   isSessionOpen(){
-    return true;
+    return (localStorage.getItem("user")) ? true : false;
   }
 
   getById(id){

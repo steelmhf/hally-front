@@ -35,8 +35,16 @@ export class LoginService {
   }
 
   login(email, password){
-    return this.users.find((x) => {
+    const user = this.users.find((x) => {
       return ((x.email === email) && (x.password === password));
     });
+    if(user){
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+    return user;
+  }
+
+  logout(){
+    localStorage.removeItem("user");
   }
 }

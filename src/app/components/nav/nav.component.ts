@@ -9,6 +9,8 @@ import {UserService} from './../../services/user.service';
 })
 export class NavComponent implements OnInit {
 
+  isSessionOpen: boolean;
+
   onLogOutClick(){
     /* aqui va la logica del logout */
     this.router.navigate(['/']);
