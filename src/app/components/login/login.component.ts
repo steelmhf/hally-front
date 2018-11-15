@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -10,21 +11,25 @@ export class LoginComponent implements OnInit {
   //vars:
   email: String;
   pwd: String;
+  found: Boolean;
 
-  constructor(private _loginService: LoginService) { 
-  }
+  constructor(
+    private router: Router,
+    private _loginService: LoginService
+    ) { }
 
   ngOnInit() {
     this.email = "";
     this.pwd = "";
+    this.found = false;
   }
 
   onLoginSubmit(){
     console.log(this._loginService.login(this.email, this.pwd));
-    const found = this._loginService.login(this.email, this.pwd);
-    if(found){
+    this.found = this._loginService.login(this.email, this.pwd);
+    if(this.found){
       console.log("Found user");
-      //Aquí va el dashboard xD
+      this.router.navigate(['/dashboard'])
     }else{
       console.log("Not found");
     }

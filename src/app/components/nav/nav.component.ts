@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {UserService} from './../../services/user.service';
+import { UserService } from './../../services/user.service';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,12 +13,13 @@ export class NavComponent implements OnInit {
   isSessionOpen: boolean;
 
   onLogOutClick(){
-    /* aqui va la logica del logout */
+    this.loginService.logout();
     this.router.navigate(['/']);
   }
 
   constructor(
     private userService: UserService,
+    private loginService: LoginService,
     private router: Router 
   ) { }
 

@@ -1,19 +1,16 @@
 <header>
   <div class="container">
-    <a [routerLink]="['/']" class="logo" *ngIf="!userService.isSessionOpen()">Hally</a> <!-- Meter esto: *ngIf="!userService.isSessionOpen()" -->
-    <!--a [routerLink]="['/dashboard']" class="logo" *ngIf="!userService.isSessionOpen()">Hally</a>--> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+    <a [routerLink]="['/']" class="logo" *ngIf="!userService.isSessionOpen()">Hally</a>
+    <a [routerLink]="['/dashboard']" class="logo" *ngIf="userService.isSessionOpen()">Hally</a>
     <nav>
       <ul>
-        <!--li><a routerLink="/home">Inicio</a></li>
-        <li><a routerLink="/">Iniciar Sesion</a></li>
-        <li><a routerLink="/contact">Contact us</a></li>-->
-        <li class *ngIf="userService.isSessionOpen()"> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+        <li class *ngIf="userService.isSessionOpen()">
           <a [routerLink]="['/dashboard']">Dashboard</a>
         </li>
-        <li class *ngIf="userService.isSessionOpen()"> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+        <li class *ngIf="userService.isSessionOpen()">
           <a [routerLink]="['/profile']">Profile</a>
         </li>
-        <li class *ngIf="userService.isSessionOpen()"> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+        <li class *ngIf="userService.isSessionOpen()">
           <a (click)="onLogOutClick()">Log out</a>
         </li>
       </ul>
