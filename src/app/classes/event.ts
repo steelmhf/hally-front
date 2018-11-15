@@ -8,13 +8,13 @@ export class Event{
     };
     spaceId: String;
     owner: {
-    id: 1143166573;
-    name: String;
-    contact: {
-        email: String;
-        phone: Number;
-        address: String;
-    };
+        id: String;
+        name: String;
+        contact: {
+            email: String;
+            phone: Number;
+            address: String;
+        };
     };
     guestIds: String[];
 }

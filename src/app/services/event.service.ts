@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Event } from './../classes/event';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,16 @@ export class EventService {
   }
 
   getByOwnerId(id){
-    return JSON.parse(localStorage.getItem("events")).find(x => x.owner.id === id);
+    let events = [];
+    let lcs = JSON.parse(localStorage.getItem("events"));
+    for (let i = 0; i < lcs.length; i++) {
+      const event: Event = lcs[i];
+      if(event.owner.id === id){
+        event.date = new Date(event.date);
+        events.push(event);
+      }
+    }
+    return events;
   }
 
   getByGuestId(id){

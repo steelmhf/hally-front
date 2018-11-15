@@ -13,6 +13,7 @@ import { EventService } from './services/event.service';
 import { UserService } from './services/user.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { EventComponent } from './components/event/event.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     HomeComponent,
     RegisterComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

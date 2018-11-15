@@ -13,6 +13,10 @@ export class DashboardComponent implements OnInit {
 
   oEvents: Array<Event>;
   gEvents: Array<Event>;
+
+  viewEvent(event: Event){
+    this.router.navigate(['/events/' +event.id]);
+  }
   constructor(
     private router: Router,
     private userService: UserService,
@@ -22,7 +26,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.oEvents = this.eventService.getByOwnerId(this.userService.getCurrentSession().id);
     this.gEvents = this.eventService.getByGuestId(this.userService.getCurrentSession().id);
-    console.log(typeof(this.oEvents));
+    console.log(this.oEvents);
     console.log(this.gEvents);
   }
 
