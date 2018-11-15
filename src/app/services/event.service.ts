@@ -55,9 +55,19 @@ export class EventService {
   }
 
   getByGuestId(id){
-    return JSON.parse(localStorage.getItem("events")).find((x) => {
-      return (x.guestIds.find(y => y === id)) ? true : false;
-    });
+    let events = [];
+    let lcs = JSON.parse(localStorage.getItem("events"));
+    for (let i = 0; i < lcs.length; i++) {
+      const event: Event = lcs[i];
+      for (let j = 0; j < lcs.length; j++) {
+        const guest: String = lcs[i].guestIds[j];
+        if (id === guest) {
+          event.date = new Date(event.date);
+          events.push(event);
+        }
+      }
+    }
+    return events;
   }
 
   insertEvent(event){
