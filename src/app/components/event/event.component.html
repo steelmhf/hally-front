@@ -1,3 +1,53 @@
-<p>
-  event works!
-</p>
+<div class="card">
+  <div class="title">
+    <h2>Código de Evento {{event.id}}</h2>
+  </div>
+  <div class="field">
+    <label class="header">Id:</label>  <label class="value">{{event.id}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Nombre:</label>  <label class="value">{{event.name}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Fecha:</label>  <label class="value"><strong>{{event.date}}</strong></label>
+  </div>
+  <div class="field">
+    <label class="header">Salón:</label>  <label class="value">{{event.space.name}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Dirección:</label>  <label class="value">{{event.space.address}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Propietario:</label>  <label class="value">{{event.owner.name}}</label>
+  </div>
+  <button class="center" type="button" (click)="manageForm()">{{action}} información</button>
+</div>
+
+<div class="card formulary" *ngIf="editable">
+  <div class="title">
+    <h2>Cambios</h2>
+  </div>
+  <form (submit)="changeInfo()">
+    <div>
+      <label class="header">Correo:</label>
+      <input class="fit" type="text" [(ngModel)]='email' name='email'>
+    </div>
+    <div>
+      <label class="header">Telefono:</label>
+      <input class="fit" type="text" [(ngModel)]='phone' name='phone'>
+    </div>
+    <div>
+      <label class="header">Dirección:</label>
+      <input class="fit" type="text" [(ngModel)]='addr' name='addr'>
+    </div>
+    <div>
+      <label class="header">Contraseña:</label>
+      <input class="fit" type="password" [(ngModel)]='pwd' name='pwd'>
+    </div>
+    <div>
+      <label class="header">Conf. Contraseña:</label>
+      <input class="fit" type="password" [(ngModel)]='pwdConf' name='pwdConf'>
+    </div>
+    <input class="center" type="submit">
+  </form>
+</div>

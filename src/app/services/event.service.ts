@@ -9,26 +9,29 @@ export class EventService {
   constructor() { 
     localStorage.setItem("events", JSON.stringify([
       {
-      "id": "QA2DJF12S",
-      "name": "Halloween 31 de octubre",
-      "date": "2018-11-11T01:08:43.511Z",
-      "status": 1,
-      "paymentInfo": {
-        "somePaymentInfoField": "123"
-      },
-      "spaceId": "Z43KZJS5L",
-      "owner": {
-        "id": "1143166573",
-        "name": "james",
-        "contact": {
-          "email": "jfritz@hallycompany.co",
-          "phone": "573015648789",
-          "address": "Cra 49#100-15"
-        }
-      },
-      "guestIds": [
-        "1145167984"
-      ]
+        "id": "QA2DJF12S",
+        "name": "Halloween 31 de octubre",
+        "date": "2018-11-11T01:08:43.511Z",
+        "status": 1,
+        "paymentInfo": {
+          "somePaymentInfoField": "123"
+        },
+        "space": {
+          "name": "Hally space one",
+          "address": "Cra 43#85-115"
+        },
+        "owner": {
+          "id": "1143166573",
+          "name": "James",
+          "contact": {
+            "email": "jfritz@hallycompany.co",
+            "phone": "573015648789",
+            "address": "Cra 49#100-15"
+          }
+        },
+        "guestIds": [
+          "1145167984"
+        ]
       }
     ]));
   }
