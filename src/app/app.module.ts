@@ -11,6 +11,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginService } from './services/login.service';
 import { EventService } from './services/event.service';
 import { UserService } from './services/user.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { UserService } from './services/user.service';
     NavComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

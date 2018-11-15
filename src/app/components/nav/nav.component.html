@@ -1,11 +1,21 @@
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">Hally</a>
+    <a [routerLink]="['/']" class="logo">Hally</a> <!-- Meter esto: *ngIf="!userService.isSessionOpen()" -->
+    <a [routerLink]="['/dashboard']" class="logo">Hally</a> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
     <nav>
       <ul>
         <!--li><a routerLink="/home">Inicio</a></li>
         <li><a routerLink="/">Iniciar Sesion</a></li>
         <li><a routerLink="/contact">Contact us</a></li>-->
+        <li class> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+          <a [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li class> <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+          <a [routerLink]="['/profile']">Profile</a>
+        </li>
+        <li class > <!-- Meter esto: *ngIf="userService.isSessionOpen()" -->
+          <a (click)="onLogOutClick()">Log out</a>
+        </li>
       </ul>
     </nav>
   </div>
