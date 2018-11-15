@@ -11,12 +11,26 @@ import { Event } from './../../classes/event';
 })
 export class DashboardComponent implements OnInit {
 
+  visible: Boolean;
+  name: String;
+  date: String;
+  place: String;
+  addr: String;
   oEvents: Array<Event>;
   gEvents: Array<Event>;
 
   viewEvent(event: Event){
     this.router.navigate(['/events/' +event.id]);
   }
+
+  popUpForm(){
+    this.visible = true;
+  }
+
+  createEvent(){
+    this.visible = false;
+  }
+
   constructor(
     private router: Router,
     private userService: UserService,
@@ -24,10 +38,9 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.visible = false;
     this.oEvents = this.eventService.getByOwnerId(this.userService.getCurrentSession().id);
     this.gEvents = this.eventService.getByGuestId(this.userService.getCurrentSession().id);
-    console.log(this.oEvents);
-    console.log(this.gEvents);
   }
 
 }

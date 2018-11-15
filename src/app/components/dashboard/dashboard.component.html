@@ -6,7 +6,7 @@
         <div class="tag">{{i}}</div>
         <div class="down">
             <h6>{{oe.name}}</h6>
-            <p>El evento creado por {{oe.owner.name}}, se llevara a cabo el día {{oe.date.toLocaleString()}}.</p>
+            <p>El evento creado por {{oe.owner.name}}. Se realizara en la sede {{oe.space.name}} ({{oe.space.address}}) y se llevara a cabo el día {{oe.date.toLocaleString()}}.</p>
         </div>
       </div>
     </div>
@@ -18,10 +18,35 @@
           <div class="tag">{{i}}</div>
           <div class="down">
               <h6>{{ge.name}}</h6>
-              <p>El evento creado por {{ge.owner.name}}, se llevara a cabo el día {{ge.date.toLocaleString()}}.</p>
+              <p>El evento creado por {{ge.owner.name}}. Se realizara en la sede {{ge.space.name}} ({{ge.space.address}}) y se llevara a cabo el día {{ge.date.toLocaleString()}}.</p>
           </div>
         </div>
       </div>
   </div>
 </div>
-<button>+</button>
+<button (click)="popUpForm()">+</button>
+
+<div class="popup" *ngIf="visible">
+    <div class="formTitle">
+      <h2>Crear Evento</h2>
+    </div>
+    <form (submit)="createEvent()">
+      <div>
+        <label class="header">Nombre:</label>
+        <input class="fit" type="text" [(ngModel)]='name' name='name'>
+      </div>
+      <div>
+        <label class="header">Fecha:</label>
+        <input class="fit" type="text" [(ngModel)]='date' name='date'>
+      </div>
+      <div>
+        <label class="header">Lugar:</label>
+        <input class="fit" type="text" [(ngModel)]='place' name='place'>
+      </div>
+      <div>
+        <label class="header">Dirección:</label>
+        <input class="fit" type="text" [(ngModel)]='addr' name='addr'>
+      </div>
+      <input class="center" type="submit">
+    </form>
+  </div>

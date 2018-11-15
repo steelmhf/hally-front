@@ -53,6 +53,47 @@
     margin: auto;
 }
 
+.popup{
+    width: 50%;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    margin: 0; padding: 0; border: 0;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 1%;
+    margin-bottom: 5%; 
+}
+
+.formTitle{
+    margin: 0; border: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    width: 100%;
+    background: rgba(119, 0, 255,1);
+    color: #FFF;
+}
+
+.header{
+    width: 150px !important;
+    margin-left: 5%;
+    display: inline-block;
+}
+
+.center{
+    display: block;
+    margin: 10px auto;
+}
+
+.fit{
+    width:50%;
+}
+
+h2{
+    margin: 0 10%;
+    padding: 1em 0;
+}
+
 h3{
     margin: auto; border: 0;
     padding: 1em 0;
@@ -93,6 +134,17 @@ button{
     font-size: 2em;
     width: 80px;
     height: 80px;
+}
+
+input{
+    font-family: "Montserrat";
+    background: transparent;
+    padding:8px;
+    display: inline-block;
+    border:none;
+    border-bottom:1px solid #ccc;
+    width:90%;
+    margin: 1em auto;
 }
 
 @media screen and (max-width: 920px){

@@ -18,7 +18,7 @@ export class EventService {
         },
         "space": {
           "name": "Hally space one",
-          "address": "Cra 43#85-115"
+          "address": "Cra 43 #85-115"
         },
         "owner": {
           "id": "1143166573",
@@ -26,7 +26,7 @@ export class EventService {
           "contact": {
             "email": "jfritz@hallycompany.co",
             "phone": "573015648789",
-            "address": "Cra 49#100-15"
+            "address": "Cra 49 #100-15"
           }
         },
         "guestIds": [

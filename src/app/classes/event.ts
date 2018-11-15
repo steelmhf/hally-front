@@ -4,9 +4,12 @@ export class Event{
     date: Date;
     status: 1;
     paymentInfo: {
-    somePaymentInfoField: String;
+        somePaymentInfoField: String;
     };
-    spaceId: String;
+    spaceId: {
+        name: String;
+        address: String;
+    }
     owner: {
         id: String;
         name: String;

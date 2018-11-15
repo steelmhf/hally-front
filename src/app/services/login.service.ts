@@ -16,7 +16,7 @@ export class LoginService {
         "username": "jfritz",
         "email": "jfritz@hallycompany.co",
         "phone": "573015648789",
-        "address": "Cra 49#100-15",
+        "address": "Cra 49 #100-15",
         "status": 1,
         "password": "123456"
       },
@@ -27,7 +27,7 @@ export class LoginService {
         "username": "lackerman",
         "email": "lackerman@hallycompany.co",
         "phone": "573047631705",
-        "address": "Cra 46#98-77",
+        "address": "Cra 46 #98-77",
         "status": 1,
         "password": "123456"
       }
