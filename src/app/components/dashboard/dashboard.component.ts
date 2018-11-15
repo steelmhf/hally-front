@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'; 
+import { EventService } from './../../services/event.service';
+import { UserService } from './../../services/user.service';
+import { Event } from './../../classes/event';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  oEvents: Array<Event>;
+  gEvents: Array<Event>;
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private eventService: EventService
+  ) { }
 
   ngOnInit() {
+    this.oEvents = this.eventService.getByOwnerId(this.userService.getCurrentSession().id);
+    this.gEvents = this.eventService.getByGuestId(this.userService.getCurrentSession().id);
+    console.log(typeof(this.oEvents));
+    console.log(this.gEvents);
   }
 
 }
