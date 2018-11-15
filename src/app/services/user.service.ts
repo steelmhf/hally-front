@@ -7,6 +7,10 @@ export class UserService {
 
   constructor() { }
 
+  isSessionOpen(){
+    return true;
+  }
+
   getById(id){
     return {};
   }
