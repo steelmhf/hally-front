@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="title">
+    <h2>{{user.fname}} {{user.lname}}</h2>
+  </div>
+  <div class="field">
+    <label class="header">id:</label>  <label class="value">{{user.id}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Correo:</label>  <label class="value">{{user.email}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Contraseña:</label>  <label class="value"><strong>{{password}}</strong></label>
+  </div>
+  <div class="field">
+    <label class="header">Telefono:</label>  <label class="value">{{user.phone}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Dirección:</label>  <label class="value">{{user.address}}</label>
+  </div>
+  <div class="field">
+    <label class="header">Nivel de usuario:</label>  <label class="value">{{user.status}}</label>
+  </div>
+  <button class="center" type="button" (click)="manageForm()">{{action}} información</button>
+</div>
+
+<div class="card formulary" *ngIf="editable">
+  <div class="title">
+    <h2>Cambios</h2>
+  </div>
+  <form (submit)="changeInfo()">
+    <div>
+      <label class="header">Correo:</label>
+      <input class="fit" type="text" [(ngModel)]='email' name='email'>
+    </div>
+    <div>
+      <label class="header">Telefono:</label>
+      <input class="fit" type="text" [(ngModel)]='phone' name='phone'>
+    </div>
+    <div>
+      <label class="header">Dirección:</label>
+      <input class="fit" type="text" [(ngModel)]='addr' name='addr'>
+    </div>
+    <div>
+      <label class="header">Contraseña:</label>
+      <input class="fit" type="password" [(ngModel)]='pwd' name='pwd'>
+    </div>
+    <div>
+      <label class="header">Conf. Contraseña:</label>
+      <input class="fit" type="password" [(ngModel)]='pwdConf' name='pwdConf'>
+    </div>
+    <input class="center" type="submit">
+  </form>
+</div>
