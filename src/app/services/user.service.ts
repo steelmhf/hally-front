@@ -8,7 +8,11 @@ export class UserService {
   constructor() { }
 
   isSessionOpen(){
-    return (localStorage.getItem("user")) ? true : false;
+    return (localStorage.getItem("user"))? true : false;
+  }
+
+  getCurrentSession(){
+    return (JSON.parse(localStorage.getItem("user")));
   }
 
   getById(id){
