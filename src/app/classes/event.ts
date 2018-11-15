@@ -2,11 +2,11 @@ export class Event{
     id: String;
     name: String;
     date: Date;
-    status: 1;
+    status: Number;
     paymentInfo: {
         somePaymentInfoField: String;
     };
-    spaceId: {
+    space: {
         name: String;
         address: String;
     }
@@ -15,7 +15,7 @@ export class Event{
         name: String;
         contact: {
             email: String;
-            phone: Number;
+            phone: String;
             address: String;
         };
     };
