@@ -5,15 +5,12 @@ import { UserService } from './../../services/user.service';
 import { Event } from './../../classes/event';
 import { User } from 'src/app/classes/user';
 import * as uuid from 'uuid';
-export interface Select{
-  value: string;
-  viewValue: string;
-}
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'], 
+  providers: [UserService]
 })
 
 export class DashboardComponent implements OnInit {

@@ -6,7 +6,8 @@ import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'], 
+  providers: [UserService]
 })
 export class NavComponent implements OnInit {
 
@@ -18,7 +19,7 @@ export class NavComponent implements OnInit {
   }
 
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private loginService: LoginService,
     private router: Router 
   ) { }
